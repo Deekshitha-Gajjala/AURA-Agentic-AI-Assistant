@@ -13,3 +13,4 @@ youtube-transcript-api==1.2.4
 
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch==2.14.0+cpu
+google-api-python-client==2.181.0

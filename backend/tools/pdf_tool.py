@@ -58,9 +58,18 @@ os.makedirs(
 
 MODEL_NAME = "all-MiniLM-L6-v2"
 
-embedding_model = SentenceTransformer(
-    MODEL_NAME
-)
+embedding_model = None
+
+
+def get_embedding_model():
+    """Load the embedding model only when an embedding operation is needed."""
+    global embedding_model
+
+    if embedding_model is None:
+        print("Loading embedding model:", MODEL_NAME)
+        embedding_model = SentenceTransformer(MODEL_NAME, device="cpu")
+
+    return embedding_model
 
 
 # ============================================================
@@ -463,7 +472,7 @@ def build_document_vectorstore(
 
     try:
 
-        embeddings = embedding_model.encode(
+        embeddings = get_embedding_model().encode(
             all_chunks,
             convert_to_numpy=True,
             show_progress_bar=True
@@ -751,7 +760,7 @@ def build_vectorstore():
 
     try:
 
-        embeddings = embedding_model.encode(
+        embeddings = get_embedding_model().encode(
             all_chunks,
             convert_to_numpy=True,
             show_progress_bar=True
@@ -1099,7 +1108,7 @@ def search_document(
 
     try:
 
-        query_embedding = embedding_model.encode(
+        query_embedding = get_embedding_model().encode(
             [query],
             convert_to_numpy=True
         )

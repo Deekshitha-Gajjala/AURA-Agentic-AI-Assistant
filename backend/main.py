@@ -114,6 +114,10 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
 
+    allow_origins=[
+        "https://aura-agentic-ai-assistant-1.onrender.com"
+    ],
+
     allow_origin_regex=(
         r"http://(localhost|127\.0\.0\.1):\d+"
     ),

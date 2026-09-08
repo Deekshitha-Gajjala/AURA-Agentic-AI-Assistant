@@ -10,3 +10,6 @@ sentence-transformers==5.5.1
 pytesseract==0.3.13
 Pillow==11.3.0
 youtube-transcript-api==1.2.4
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.0+cpu

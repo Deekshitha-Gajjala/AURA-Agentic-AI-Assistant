@@ -1,0 +1,71 @@
+# Environment / Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Runtime uploads and generated data
+backend/uploads/
+backend/data/
+backend/chroma_db/
+backend/faiss_index/
+backend/vectorstore/
+backend/temp/
+backend/tmp/
+
+# PDFs
+*.pdf
+
+# Audio
+*.wav
+*.mp3
+*.ogg
+*.m4a
+*.webm
+
+# Images
+*.jpg
+*.jpeg
+*.png
+*.webp
+
+# ML model files
+*.pth
+*.pt
+*.onnx
+*.bin
+*.safetensors
+
+# Logs
+*.log
+logs/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Frontend build
+frontend/dist/
+frontend/build/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
